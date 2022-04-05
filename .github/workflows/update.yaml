@@ -22,7 +22,7 @@ jobs:
         run: npm install compare-semver --save
       - name: "🔨 Get aws-cdk versions"
         id: aws
-        run: echo ::set-output name=cdkversions::$(npm view aws-cdk@1 version | tail -n1 | sed -nre 's/^[^0-9]*(([0-9]+\.)*[0-9]+).*/\1/p')
+        run: echo ::set-output name=cdkversions::$(npm view aws-cdk@2 version | tail -n1 | sed -nre 's/^[^0-9]*(([0-9]+\.)*[0-9]+).*/\1/p')
       - name: "🔨 Compare versions"
         id: compare
         run: echo ::set-output name=compare::$(semver ${{ steps.git.outputs.version }} ${{ steps.aws.outputs.cdkversions }} | tail -n1)

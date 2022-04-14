@@ -32,6 +32,6 @@ WORKDIR /opt/app
 
 RUN pip install --upgrade pip \
         aws-cdk-lib==${AWS_CDK_VERSION} \
-        constructs>=10.0.0,<11.0.0
+        "constructs>=10.0.0,<11.0.0"
 
 CMD ["cdk", "--version"]

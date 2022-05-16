@@ -32,6 +32,7 @@ WORKDIR /opt/app
 
 RUN pip install --upgrade pip \
         aws-cdk-lib==${AWS_CDK_VERSION} \
+        cdk-ecr-deployment==2.5.1 \
         "constructs>=10.0.0,<11.0.0"
 
 CMD ["cdk", "--version"]
